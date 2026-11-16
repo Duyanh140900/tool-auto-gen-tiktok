@@ -1,0 +1,91 @@
+# ---------- Secrets and local config ----------
+.env
+.env.*
+!.env.example
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# ---------- Python ----------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+.venv*/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ---------- Node / Next.js ----------
+node_modules/
+frontend/node_modules/
+frontend/.next/
+frontend/.turbo/
+frontend/.cache/
+frontend/dist/
+frontend/out/
+frontend/.vercel/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---------- Generated artifacts ----------
+*.log
+logs/
+scripts/*.log
+scripts/*.bak
+recovery/
+
+# Heavy binaries that previously broke GitHub's 100 MB limit
+ffmpeg.exe
+ffplay.exe
+ffprobe.exe
+ffmpeg
+ffplay
+ffprobe
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Build / packaging artifacts
+dist/
+build/
+out/
+.turbo/
+
+# IDE / editor caches
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Pipeline outputs (intermediate + final videos, downloaded source clips)
+outputs/
+final_videos/
+downloads/
+tmp/
+temp/
+
+# ---------- Keep folder placeholders ----------
+!outputs/.gitkeep
+!inputs/.gitkeep
+!assets/.gitkeep
+!logs/.gitkeep
+# Ho so Chrome dang bai TikTok Studio (chua phien dang nhap)
+.tiktok_browser_profile/
+
+# Setting form /ai-video cho bot Telegram
+.ai_video_defaults.json
+
+# Cookie/phiên đăng nhập và file cục bộ (tuyệt đối không commit)
+cookies.txt
+*.out
+*.bak
+backup_src_*/
+post_schedule.json

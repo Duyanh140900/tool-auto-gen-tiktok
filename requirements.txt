@@ -1,0 +1,54 @@
+# Core dependencies for TikTok Review Tool
+# Tested with Python 3.12 on macOS (Apple Silicon)
+
+# Video download (TikTok no-watermark)
+yt-dlp>=2025.1.1
+
+# TTS - Vietnamese voices
+edge-tts>=6.1.18          # Microsoft Edge TTS (free, no quota)
+
+# Video editing
+moviepy>=1.0.3            # Video manipulation
+ffmpeg-python>=0.2.0      # FFmpeg Python wrapper
+Pillow>=10.0.0            # Image processing
+
+# Desktop GUI
+PyQt6>=6.5.0              # Cross-platform desktop GUI
+
+# Desktop automation (for CapCut)
+pyautogui>=0.9.54
+
+# Android automation: tu them san pham vao Showcase TikTok (src/showcase.py)
+uiautomator2>=3.0.0
+
+# Browser automation: dang hen gio TikTok Studio (src/tiktok_poster.py)
+playwright>=1.40.0
+send2trash>=1.8.0   # hen xong chuyen video vao Thung rac
+
+# macOS native AppleScript bridge. Chi build duoc tren macOS, KHONG co
+# tren Windows. Cai rieng bang:
+#   pip install -r requirements.txt
+#   pip install -r requirements-macos.txt
+# Hoac:   pip install ".[macos]"
+pyobjc-framework-Cocoa>=10.0 ; sys_platform == 'darwin'
+
+# HTTP for API calls
+requests>=2.31.0
+aiohttp>=3.9.0
+
+# Utilities
+python-dotenv>=1.0.0      # Load .env files (for API keys)
+rich>=13.0.0              # Pretty console output
+loguru>=0.7.0             # Better logging
+
+# Optional: ElevenLabs fallback if user wants Adam voice exactly
+# elevenlabs>=1.0.0
+
+# Web UI (FastAPI local backend)
+fastapi>=0.110.0
+uvicorn[standard]>=0.27.0
+pydantic>=2.6.0
+websockets>=12.0    # FastAPI WebSocket support
+
+# Testing utilities for backend smoke tests
+httpx>=0.27.0

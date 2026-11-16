@@ -1,0 +1,16 @@
+[Unit]
+Description=TikTok Review Tool - backend (FastAPI)
+After=tiktok-xvfb.service
+Requires=tiktok-xvfb.service
+
+[Service]
+WorkingDirectory=@APP_DIR@
+Environment=DISPLAY=:99
+# Giờ hẹn đăng tính theo múi giờ của tiến trình này (và Chrome)
+Environment=TZ=@APP_TZ@
+ExecStart=@APP_DIR@/.venv/bin/python -m uvicorn src.web.app:app --host 127.0.0.1 --port @BACKEND_PORT@
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

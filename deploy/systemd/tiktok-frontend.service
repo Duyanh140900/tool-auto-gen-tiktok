@@ -1,0 +1,13 @@
+[Unit]
+Description=TikTok Review Tool - frontend (Next.js)
+After=tiktok-backend.service
+
+[Service]
+WorkingDirectory=@APP_DIR@/frontend
+Environment=NEXT_PUBLIC_API_TARGET=http://127.0.0.1:@BACKEND_PORT@
+ExecStart=@NODE_BIN@/node @APP_DIR@/frontend/node_modules/next/dist/bin/next start -p @FRONTEND_PORT@ -H @BIND_HOST@
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

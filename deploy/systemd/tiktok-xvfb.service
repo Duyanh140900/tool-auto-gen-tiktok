@@ -1,0 +1,9 @@
+[Unit]
+Description=Xvfb :99 (màn hình ảo cho Chrome đăng bài TikTok)
+
+[Service]
+ExecStart=/usr/bin/Xvfb :99 -screen 0 1440x1000x24 -nolisten tcp
+Restart=always
+
+[Install]
+WantedBy=default.target
